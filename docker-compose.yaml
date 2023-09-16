@@ -2,10 +2,9 @@ version:3.2
 
 services:
   apache:
-  environment:
-    container_name: hello-world
-    image: httpd:2.4
-    cpus:1.5
-    mem_limit: 1024m
-  ports:
-    -"80:80"
+    image: httpd:latest
+    container_name: app-apache
+    ports:
+    - "8080:8080"
+    volumes:
+    - ./website:/usr/local/apache2/htdocs
