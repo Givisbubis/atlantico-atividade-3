@@ -3,11 +3,9 @@ version:3.2
 services:
   apache:
   environment:
+    container_name: hello-world
     image: httpd:2.4
+    cpus:1.5
+    mem_limit: 1024m
   ports:
     -"80:80"
-  networks:
-  - minha-rede
-networks:
-  minha-rede:
-    driver: bridge
